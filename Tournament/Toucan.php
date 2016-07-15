@@ -6,9 +6,9 @@ namespace Tournament;
 use File\Parser;
 use Tournament;
 
-class Toucan extends Tournament implements Interface {
+class Toucan extends Abstract implements Interface {
 
-	private $state = Tournament::READY_STATE;
+	private $state = Abstract::READY_STATE;
 
 	protected $tourPlayers = [];
 	protected $games = [];
@@ -16,7 +16,7 @@ class Toucan extends Tournament implements Interface {
 
 	protected function readFiles() {
 		try {
-			if ($this->state !== Tournament::READY_STATE) {
+			if ($this->state !== Abstract::READY_STATE) {
 				throw new Exception('Not in proper state.');
 			}
 
@@ -29,7 +29,7 @@ class Toucan extends Tournament implements Interface {
 				}
 			}
 		} catch (Throwable $e) {
-			$this->state = Tournament::FAULTED_STATE;
+			$this->state = Abstract::FAULTED_STATE;
 		}
 	}
 
