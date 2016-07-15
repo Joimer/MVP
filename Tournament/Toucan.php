@@ -33,10 +33,6 @@ class Toucan extends Abstract implements Interface {
 		}
 	}
 
-	protected function addGame(\Game\Abstract $game) {
-		$this->games[] = $game;
-	}
-
 	protected function calculateMVP() {
 		foreach ($this->games as $game) {
 			foreach ($game->getPlayerPoints() as $player=>$points) {
@@ -49,11 +45,13 @@ class Toucan extends Abstract implements Interface {
 	}
 
 	protected function sort() {
-
+		uasort($this->playerRanks, function ($a, $b) {
+			return $a <=> $b;
+		});
 	}
 
 	protected function topPlayerName() : string {
-
+		return reset(array_keys($this->playerRanks));
 	}
 
 	protected function MVP() : string{
