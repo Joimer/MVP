@@ -3,10 +3,11 @@ declare(strict_types=1);
 
 namespace Game;
 
-class Handball extends \Game implements \Game\Interface {
+class Basketball extends \Game implements \Game\Interface {
 
-	public const GOALKEEPER = 'goalkeeper';
-	public const FIELD_PLAYER = 'field_player';
+	public const GUARD = 'guard';
+	public const FORWARD = 'forward';
+	public const CENTER = 'center';
 
 	protected $teamA;
 	protected $teamB;
