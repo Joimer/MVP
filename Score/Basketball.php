@@ -17,15 +17,15 @@ class Basketball extends Abstract implements Interface {
 	}
 
 	public calculateScore() : int {
-		if ($position === \Game\Basketball::GUARD) {
+		if ($this->position === \Game\Basketball::GUARD) {
 			return $this->calculateGuardScore();
 		}
 
-		if ($position === \Game\Basketball::FORWARD) {
+		if ($this->position === \Game\Basketball::FORWARD) {
 			return $this->calculateForwardScore();
 		}
 
-		if ($position === \Game\Basketball::CENTER) {
+		if ($this->position === \Game\Basketball::CENTER) {
 			return $this->calculateCenterScore();
 		}
 

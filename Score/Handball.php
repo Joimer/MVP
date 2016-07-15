@@ -19,11 +19,11 @@ class Handball extends Abstract implements Interface {
 	}
 
 	public calculateScore() : int {
-		if ($position === \Game\Handball::GOALKEEPER) {
+		if ($this->position === \Game\Handball::GOALKEEPER) {
 			return $this->calculateGoalkeeperScore();
 		}
 
-		if ($position === \Game\Handball::FIELD_PLAYER) {
+		if ($this->position === \Game\Handball::FIELD_PLAYER) {
 			return $this->calculateFieldPlayerScore();
 		}
 

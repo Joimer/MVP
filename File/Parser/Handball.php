@@ -10,10 +10,10 @@ class Handball extends Abstract implements Interface {
 		foreach ($fileContents as $line) {
 			$parsedLine = $this->parseLine($line);
 			list($id, $nick, $number, $teamName, $position, $goalsMade, $goalsReceived) = $parsedLine;
-			$score = new \Score\Handball($goalsMade, $goalsReceived);
+			$score = new \Score\Handball($position, $goalsMade, $goalsReceived);
 			$player = new \Player\Handball($id, $nick, $score);
 			$team = $this->getTeam($teamName);
-			$team->addPlayer($player, $position, (int)$number);
+			$team->addPlayer($player, (int)$number);
 		}
 
 		$game = new \Game\Handball($team[0], $team[1]);

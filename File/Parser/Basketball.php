@@ -10,7 +10,7 @@ class Basketball extends Abstract implements Interface {
 		foreach ($fileContents as $line) {
 			$parsedLine = $this->parseLine($line);
 			list($id, $nick, $number, $teamName, $position, $scoredPoints, $rebounds, $assists) = $parsedLine;
-			$score = new \Score\Basketball($scoredPoints, $rebounds, $assists);
+			$score = new \Score\Basketball($position, $scoredPoints, $rebounds, $assists);
 			$player = new \Player\Basketball($id, $nick, $score);
 			$team = $this->getTeam($teamName);
 			$team->addPlayer($player, $position, (int)$number);

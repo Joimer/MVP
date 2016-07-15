@@ -9,9 +9,13 @@ abstract class Abstract {
 
 	protected $playerPoints = [];
 
-	public __construct(\Team $teamA, \Team $teamB) {
-		$this->teamA = $teamA;
-		$this->teamB = $teamB;
+	protected function getWinner() : \Team {
+		$teamA->getScores();
+		$teamB->getScores();
+		if ($teamA->goalsMade > $teamB->goalsMade) {
+			return $teamA;
+		}
+		return $teamB;
 	}
 
 	public function getPlayerPoints() : array {
