@@ -45,6 +45,7 @@ class Toucan extends Abstract implements Interface {
 	}
 
 	protected function sort() {
+		// This can be done with a simple sort(), but I'm showcasing here spaceship operator.
 		uasort($this->playerRanks, function ($a, $b) {
 			return $a <=> $b;
 		});

@@ -21,13 +21,9 @@ class Handball extends Abstract implements Interface {
 		return $game;
 	}
 
-	protected function parseLine(string $line) : array {
-		return explode(';', trim($line));
-	}
-
 	protected function getTeam(string $team) : \Team {
 		if (!$teams[$team]) {
-			$teams[$team] = new \Team();
+			$teams[$team] = new \Team\Handball();
 		}
 
 		return $teams[$team];

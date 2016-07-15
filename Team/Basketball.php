@@ -10,10 +10,6 @@ class Basketball extends Abstract implements Interface {
 	protected $playerScores = 0;
 
 	public function addPlayer(\Player\Interface $player, string $position, int $number) {
-		if ($position !== self::GOALKEEPER_POSITION && $position !== self::FIELD_PLAYER_POSITION) {
-			throw new Exception('Wrong position.');
-		}
-
 		$this->players[$number] = $player;
 	}
 

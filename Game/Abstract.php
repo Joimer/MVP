@@ -20,7 +20,7 @@ abstract class Abstract {
 
 	protected function calculatePlayerPoints() {
 		$winner = $this->getWinner();
-		foreach ($playerPoints as $player=>&$points) {
+		foreach ($this->playerPoints as $player=>&$points) {
 			if ($winner->hasPlayer($player)) {
 				$points += \Game\Abstract::ADDITIONAL_WINNING_POINTS;
 			}
