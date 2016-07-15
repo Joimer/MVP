@@ -5,9 +5,9 @@ namespace Game;
 
 class Basketball extends \Game implements \Game\Interface {
 
-	public const GUARD = 'guard';
-	public const FORWARD = 'forward';
-	public const CENTER = 'center';
+	public const GUARD = 'G';
+	public const FORWARD = 'F';
+	public const CENTER = 'C';
 
 	protected $teamA;
 	protected $teamB;

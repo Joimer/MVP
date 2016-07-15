@@ -5,8 +5,8 @@ namespace Game;
 
 class Handball extends \Game implements \Game\Interface {
 
-	public const GOALKEEPER = 'goalkeeper';
-	public const FIELD_PLAYER = 'field_player';
+	public const GOALKEEPER = 'G';
+	public const FIELD_PLAYER = 'F';
 
 	protected $teamA;
 	protected $teamB;
