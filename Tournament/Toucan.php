@@ -55,18 +55,16 @@ class Toucan extends Abstract implements Interface {
 		return reset(array_keys($this->playerRanks));
 	}
 
-	protected function MVP() : string{
+	protected function MVP() : string {
 		if ($this->state === Tournament::READY_STATE) {
 			return "MVP still to be calculated.";
-		}
-
-		if ($this->state === Tournament::FAULTED_STATE) {
-			return "Could not calculate MVP.";
 		}
 
 		if ($this->state === Tournament::FINISHED_STATE) {
 			return "The MVP is: " . $this->topPlayerName();
 		}
+
+		return "Could not calculate MVP.";
 	}
 
 	public function getMVP() : string {
