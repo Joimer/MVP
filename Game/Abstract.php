@@ -12,7 +12,7 @@ abstract class Abstract {
 	protected function getWinner() : \Team {
 		$teamA->getScores();
 		$teamB->getScores();
-		if ($teamA->goalsMade > $teamB->goalsMade) {
+		if ($teamA->score > $teamB->score) {
 			return $teamA;
 		}
 		return $teamB;

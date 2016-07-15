@@ -4,11 +4,22 @@ declare(strict_types=1);
 namespace Team;
 
 class Abstract implements Interface {
+
 	protected $players = [];
+	protected $score = 0;
+	protected $playerScores = 0;
 
-	abstract public function addPlayer(\Player\Interface $player, string $position, int $number);
+	public function getScores() {
+		foreach ($this->getPlayers() as $player) {
+			$score = $player->getScore();
+			$this->score += $score->score;
+			$this->playerScores[$player->getId()] += $score->calculateScore();
+		}
+	}
 
-	abstract public function getScores();
+	public function addPlayer(\Player\Interface $player, int $number) {
+		$this->players[$number] = $player;
+	}
 
 	public function hasPlayer(string $player) : bool {
 		$has = false;

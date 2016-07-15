@@ -23,7 +23,7 @@ class Basketball extends Abstract implements Interface {
 
 	protected function getTeam(string $team) : \Team {
 		if (!$teams[$team]) {
-			$teams[$team] = new \Team\Handball();
+			$teams[$team] = new \Team\Basketball();
 		}
 
 		return $teams[$team];
