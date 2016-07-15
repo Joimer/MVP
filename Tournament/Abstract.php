@@ -17,5 +17,7 @@ abstract class Abstract implements Interface {
 
 	abstract public function getMVP() : string;
 
-	abstract protected function addGame(\Game\Abstract $game);
+	protected function addGame(\Game\Abstract $game) {
+		$this->games[] = $game;
+	}
 }

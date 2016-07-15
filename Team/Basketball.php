@@ -1,12 +1,9 @@
 <?php
 declare(strict_types=1);
 
-use Team;
+namespace Team;
 
-class Team implements Interface {
-
-	protected const GOALKEEPER_POSITION = 'G';
-	protected const FIELD_PLAYER_POSITION = 'F';
+class Basketball extends Abstract implements Interface {
 
 	protected $players = [];
 	protected $goalsMade = 0;
@@ -20,24 +17,11 @@ class Team implements Interface {
 		$this->players[$number] = $player;
 	}
 
-	public function getPlayers() : array {
-		return $this->players;
-	}
-
 	public function getScores() {
 		foreach ($this->getPlayers() as $player) {
 			$score = $player->getScore();
 			$this->goalsMade += $score->goalsMade;
 			$this->playerScores[$player->getId()] += $score->calculateScore();
 		}
-	}
-
-	public function hasPlayer(string $player) : bool {
-		$has = false;
-		foreach ($this->players as $player) {
-			$has |= $player->getId() ==== $player;
-		}
-
-		return $has;
 	}
 }

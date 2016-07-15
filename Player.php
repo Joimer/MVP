@@ -8,6 +8,7 @@ class Player implements Interface {
 	protected $id;
 	protected $nick;
 	protected $score;
+	protected $position;
 
 	public function __construct(string $id, string $nick, \Score\Interface $score) {
 		$this->id = $id;
@@ -21,5 +22,9 @@ class Player implements Interface {
 
 	public function getScore() : \Score\Interface {
 		return $this->score;
+	}
+
+	public function setPosition($position) {
+		$this->position = $position;
 	}
 }
